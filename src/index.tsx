@@ -135,51 +135,75 @@ function getLayout(title: string, content: string, activePage: string = 'home') 
     ${content}
 
     <!-- Footer -->
-    <footer class="gradient-bg-dark border-t border-brand-orange py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">
-                        <span class="text-brand-orange">HALLA</span> MEDIA SCHOOL
-                    </h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        창의적이고 혁신적인 미디어 콘텐츠를 만들어가는 미래의 크리에이터를 양성합니다.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-orange-light transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-orange-light transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-brand-orange rounded-full flex items-center justify-center hover:bg-brand-orange-light transition">
-                            <i class="fab fa-facebook"></i>
-                        </a>
+    <footer class="bg-black py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <!-- Main Footer Content -->
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-6xl font-black uppercase tracking-wider text-white mb-6">
+                    <span class="text-brand-orange">HALLA</span> MEDIA SCHOOL
+                </h2>
+                <p class="text-xl md:text-2xl text-white font-light mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Tell us about your project.<br>
+                    Let's collaborate and create great media content.
+                </p>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white mb-6 uppercase tracking-wider">Contact Info</h3>
+                    <div class="space-y-4">
+                        <p class="text-lg text-white">
+                            <i class="fas fa-map-marker-alt text-brand-orange mr-3"></i>
+                            제주시 한라대학로 38, 제주한라대학교
+                        </p>
+                        <p class="text-lg text-white">
+                            <i class="fas fa-phone text-brand-orange mr-3"></i>
+                            +82 1600 2995
+                        </p>
+                        <p class="text-lg text-white">
+                            <i class="fas fa-envelope text-brand-orange mr-3"></i>
+                            media@chu.ac.kr
+                        </p>
                     </div>
                 </div>
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-orange mb-4">바로가기</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/works" class="text-gray-400 hover:text-brand-orange transition">STUDENT WORKS</a></li>
-                        <li><a href="/about" class="text-gray-400 hover:text-brand-orange transition">ABOUT US</a></li>
-                        <li><a href="/faculty" class="text-gray-400 hover:text-brand-orange transition">FACULTY</a></li>
-                        <li><a href="/curriculum" class="text-gray-400 hover:text-brand-orange transition">CURRICULUM</a></li>
-                        <li><a href="/contact" class="text-gray-400 hover:text-brand-orange transition">CONTACT</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-sm font-bold uppercase tracking-wider text-brand-orange mb-4">연락처</h4>
-                    <div class="space-y-2 text-sm text-gray-400">
-                        <p><i class="fas fa-map-marker-alt text-brand-orange mr-2"></i>제주시 한라대학로 38</p>
-                        <p><i class="fas fa-phone text-brand-orange mr-2"></i>064-741-1000</p>
-                        <p><i class="fas fa-envelope text-brand-orange mr-2"></i>media@chu.ac.kr</p>
+                
+                <div class="text-center md:text-right">
+                    <h3 class="text-2xl font-bold text-white mb-6 uppercase tracking-wider">Quick Links</h3>
+                    <div class="space-y-4">
+                        <div><a href="/works" class="text-lg text-white hover:text-brand-orange transition duration-300">Student Works</a></div>
+                        <div><a href="/faculty" class="text-lg text-white hover:text-brand-orange transition duration-300">Faculty</a></div>
+                        <div><a href="/curriculum" class="text-lg text-white hover:text-brand-orange transition duration-300">Curriculum</a></div>
+                        <div><a href="/contact" class="text-lg text-white hover:text-brand-orange transition duration-300">Contact</a></div>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-brand-orange mt-8 pt-8 text-center">
-                <p class="text-gray-400 text-sm">© 2024 제주한라대학교 방송영상학과. All rights reserved.</p>
-                <p class="text-brand-orange text-xs mt-2 font-semibold uppercase tracking-wider">
-                    EMPOWERING • DYNAMIC • DIVERSE • CREATIVE • COLLABORATIVE
+
+            <!-- Social Links -->
+            <div class="text-center mb-12">
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="w-16 h-16 bg-white rounded-full flex items-center justify-center hover:bg-brand-orange transition duration-300 group">
+                        <i class="fab fa-instagram text-2xl text-black group-hover:text-white"></i>
+                    </a>
+                    <a href="#" class="w-16 h-16 bg-white rounded-full flex items-center justify-center hover:bg-brand-orange transition duration-300 group">
+                        <i class="fab fa-youtube text-2xl text-black group-hover:text-white"></i>
+                    </a>
+                    <a href="#" class="w-16 h-16 bg-white rounded-full flex items-center justify-center hover:bg-brand-orange transition duration-300 group">
+                        <i class="fab fa-facebook text-2xl text-black group-hover:text-white"></i>
+                    </a>
+                    <a href="#" class="w-16 h-16 bg-white rounded-full flex items-center justify-center hover:bg-brand-orange transition duration-300 group">
+                        <i class="fab fa-linkedin text-2xl text-black group-hover:text-white"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-white text-sm mb-4">
+                    © HALLA MEDIA SCHOOL KOREA CO. All rights reserved.
+                </p>
+                <p class="text-brand-orange text-lg font-bold uppercase tracking-wider">
+                    EMPOWERING • DYNAMIC • CREATIVE • COLLABORATIVE
                 </p>
             </div>
         </div>
@@ -806,7 +830,7 @@ app.get('/about', (c) => {
     </section>
 
     <!-- Call to Action -->
-    <section class="py-20 bg-gradient-to-r from-brand-orange via-yellow-500 to-brand-orange">
+    <section class="py-20 bg-gradient-to-r from-brand-orange to-brand-orange-light">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
                 YOUR CREATIVE JOURNEY STARTS HERE
@@ -815,12 +839,10 @@ app.get('/about', (c) => {
                 미래를 만들어갈 창의적 인재가 되는 여정, 지금 시작하세요!
             </p>
             <div class="flex justify-center space-x-6 flex-wrap gap-4">
-                <a href="/works" class="bg-black text-white px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wide hover:bg-gray-900 transition duration-300">
-                    <i class="fas fa-play mr-3"></i>
+                <a href="/works" class="bg-black text-white px-8 py-4 font-bold text-lg uppercase tracking-wide hover:bg-gray-900 transition duration-300 transform hover:scale-105">
                     VIEW STUDENT WORKS
                 </a>
-                <a href="/contact" class="border-2 border-black text-black px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wide hover:bg-black hover:text-white transition duration-300">
-                    <i class="fas fa-envelope mr-3"></i>
+                <a href="/contact" class="border-2 border-white text-white px-8 py-4 font-bold text-lg uppercase tracking-wide hover:bg-white hover:text-brand-orange transition duration-300 transform hover:scale-105">
                     GET IN TOUCH
                 </a>
             </div>
@@ -856,159 +878,171 @@ app.get('/faculty', (c) => {
         <div class="max-w-7xl mx-auto">
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 교수진 1 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-purple-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i class="fas fa-user text-3xl text-purple-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">김영진 교수</h3>
-                        <p class="text-purple-600 font-medium">학과장 / 영상제작 전공</p>
+                <!-- Faculty Card 1 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6 transform hover:scale-105 hover:border-brand-orange-light transition-all duration-300">
+                    <div class="bg-gradient-to-br from-brand-orange to-brand-orange-light w-full h-48 rounded mb-6 flex items-center justify-center">
+                        <span class="text-4xl font-black text-white">KIM</span>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">전문 분야</h4>
-                            <p class="text-gray-600 text-sm">다큐멘터리 제작, 영상 스토리텔링</p>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">학력</h4>
-                            <p class="text-gray-600 text-sm">서울대학교 영상학과 박사</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">주요 경력</h4>
-                            <p class="text-gray-600 text-sm">KBS 다큐멘터리 PD 15년 경력</p>
-                        </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wider mb-2 text-brand-orange-light">김영진 교수</h3>
+                    <div class="bg-brand-orange text-black px-4 py-2 inline-block font-bold uppercase text-sm mb-4">
+                        영상제작 전공
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold">• 서울대학교 영상학과 박사</p>
+                        <p class="font-semibold">• 전 KBS 다큐멘터리 PD (15년 경력)</p>
+                        <p class="font-semibold">• 다큐멘터리 제작 전문가</p>
+                    </div>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#다큐멘터리</span>
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#스토리텔링</span>
                     </div>
                 </div>
 
-                <!-- 교수진 2 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-blue-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i class="fas fa-user text-3xl text-blue-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">박민수 교수</h3>
-                        <p class="text-blue-600 font-medium">영상편집 전공</p>
+                <!-- Faculty Card 2 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6 transform hover:scale-105 hover:border-brand-orange-light transition-all duration-300">
+                    <div class="bg-gradient-to-br from-brand-orange to-brand-orange-light w-full h-48 rounded mb-6 flex items-center justify-center">
+                        <span class="text-4xl font-black text-white">PARK</span>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">전문 분야</h4>
-                            <p class="text-gray-600 text-sm">포스트 프로덕션, 디지털 영상편집</p>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">학력</h4>
-                            <p class="text-gray-600 text-sm">한국예술종합학교 영상원 석사</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">주요 경력</h4>
-                            <p class="text-gray-600 text-sm">영화 <기생충> 편집 참여</p>
-                        </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wider mb-2 text-brand-orange-light">박민수 교수</h3>
+                    <div class="bg-brand-orange text-black px-4 py-2 inline-block font-bold uppercase text-sm mb-4">
+                        영상편집 전공
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold">• 한국예술종합학교 영상원 석사</p>
+                        <p class="font-semibold">• 영화 <기생충> 편집 참여</p>
+                        <p class="font-semibold">• 포스트 프로덕션 전문가</p>
+                    </div>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#편집</span>
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#포스트</span>
                     </div>
                 </div>
 
-                <!-- 교수진 3 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-green-100 to-blue-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-green-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i class="fas fa-user text-3xl text-green-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">이수현 교수</h3>
-                        <p class="text-green-600 font-medium">방송기술 전공</p>
+                <!-- Faculty Card 3 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6 transform hover:scale-105 hover:border-brand-orange-light transition-all duration-300">
+                    <div class="bg-gradient-to-br from-brand-orange to-brand-orange-light w-full h-48 rounded mb-6 flex items-center justify-center">
+                        <span class="text-4xl font-black text-white">LEE</span>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">전문 분야</h4>
-                            <p class="text-gray-600 text-sm">방송 시스템, 디지털 미디어 기술</p>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">학력</h4>
-                            <p class="text-gray-600 text-sm">KAIST 전자공학과 박사</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">주요 경력</h4>
-                            <p class="text-gray-600 text-sm">삼성전자 미디어솔루션센터 수석연구원</p>
-                        </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wider mb-2 text-brand-orange-light">이수현 교수</h3>
+                    <div class="bg-brand-orange text-black px-4 py-2 inline-block font-bold uppercase text-sm mb-4">
+                        방송기술 전공
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold">• KAIST 전자공학과 박사</p>
+                        <p class="font-semibold">• 전 삼성전자 미디어솔루션센터 수석연구원</p>
+                        <p class="font-semibold">• 방송 시스템 기술 전문가</p>
+                    </div>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#방송기술</span>
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#시스템</span>
                     </div>
                 </div>
 
-                <!-- 교수진 4 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-yellow-100 to-green-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-yellow-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i class="fas fa-user text-3xl text-yellow-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">정미영 교수</h3>
-                        <p class="text-yellow-600 font-medium">미디어 콘텐츠 전공</p>
+                <!-- Faculty Card 4 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6 transform hover:scale-105 hover:border-brand-orange-light transition-all duration-300">
+                    <div class="bg-gradient-to-br from-brand-orange to-brand-orange-light w-full h-48 rounded mb-6 flex items-center justify-center">
+                        <span class="text-4xl font-black text-white">JUNG</span>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">전문 분야</h4>
-                            <p class="text-gray-600 text-sm">콘텐츠 기획, 뉴미디어 콘텐츠</p>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">학력</h4>
-                            <p class="text-gray-600 text-sm">연세대학교 신문방송학과 박사</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">주요 경력</h4>
-                            <p class="text-gray-600 text-sm">CJ ENM 콘텐츠사업부 이사</p>
-                        </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wider mb-2 text-brand-orange-light">정미영 교수</h3>
+                    <div class="bg-brand-orange text-black px-4 py-2 inline-block font-bold uppercase text-sm mb-4">
+                        미디어 콘텐츠
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold">• 연세대학교 신문방송학과 박사</p>
+                        <p class="font-semibold">• 전 CJ ENM 콘텐츠사업부 이사</p>
+                        <p class="font-semibold">• 콘텐츠 기획 전문가</p>
+                    </div>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#콘텐츠기획</span>
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#뉴미디어</span>
                     </div>
                 </div>
 
-                <!-- 교수진 5 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-pink-100 to-purple-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-pink-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i class="fas fa-user text-3xl text-pink-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">강동혁 교수</h3>
-                        <p class="text-pink-600 font-medium">사운드 디자인 전공</p>
+                <!-- Faculty Card 5 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6 transform hover:scale-105 hover:border-brand-orange-light transition-all duration-300">
+                    <div class="bg-gradient-to-br from-brand-orange to-brand-orange-light w-full h-48 rounded mb-6 flex items-center justify-center">
+                        <span class="text-4xl font-black text-white">KANG</span>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">전문 분야</h4>
-                            <p class="text-gray-600 text-sm">음향 제작, 사운드 이펙트</p>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">학력</h4>
-                            <p class="text-gray-600 text-sm">버클리 음대 음향학과 석사</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">주요 경력</h4>
-                            <p class="text-gray-600 text-sm">할리우드 영화 음향 감독 10년</p>
-                        </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wider mb-2 text-brand-orange-light">강동혁 교수</h3>
+                    <div class="bg-brand-orange text-black px-4 py-2 inline-block font-bold uppercase text-sm mb-4">
+                        사운드 디자인
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold">• 버클리 음대 음향학과 석사</p>
+                        <p class="font-semibold">• 할리우드 영화 음향 감독 (10년 경력)</p>
+                        <p class="font-semibold">• 음향 제작 전문가</p>
+                    </div>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#사운드</span>
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#음향</span>
                     </div>
                 </div>
 
-                <!-- 교수진 6 -->
-                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="bg-gradient-to-br from-indigo-100 to-pink-100 p-6 text-center">
-                        <div class="w-24 h-24 bg-indigo-200 rounded-full mx-auto mb-4 flex items-center justify-center">
-                            <i class="fas fa-user text-3xl text-indigo-600"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold text-gray-800">최은지 교수</h3>
-                        <p class="text-indigo-600 font-medium">애니메이션 전공</p>
+                <!-- Faculty Card 6 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6 transform hover:scale-105 hover:border-brand-orange-light transition-all duration-300">
+                    <div class="bg-gradient-to-br from-brand-orange to-brand-orange-light w-full h-48 rounded mb-6 flex items-center justify-center">
+                        <span class="text-4xl font-black text-white">CHOI</span>
                     </div>
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">전문 분야</h4>
-                            <p class="text-gray-600 text-sm">3D 애니메이션, 모션 그래픽</p>
-                        </div>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-2">학력</h4>
-                            <p class="text-gray-600 text-sm">홍익대학교 애니메이션학과 박사</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-800 mb-2">주요 경력</h4>
-                            <p class="text-gray-600 text-sm">픽사 애니메이션 스튜디오 근무</p>
-                        </div>
+                    <h3 class="text-2xl font-bold uppercase tracking-wider mb-2 text-brand-orange-light">최은지 교수</h3>
+                    <div class="bg-brand-orange text-black px-4 py-2 inline-block font-bold uppercase text-sm mb-4">
+                        애니메이션 전공
+                    </div>
+                    <div class="space-y-2 text-gray-300">
+                        <p class="font-semibold">• 홍익대학교 애니메이션학과 박사</p>
+                        <p class="font-semibold">• 전 픽사 애니메이션 스튜디오 아티스트</p>
+                        <p class="font-semibold">• 3D 애니메이션 전문가</p>
+                    </div>
+                    <div class="mt-6 flex space-x-2">
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#애니메이션</span>
+                        <span class="bg-gray-800 text-brand-orange px-3 py-1 text-sm font-bold uppercase">#3D</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Research & Achievement -->
+            <div class="mt-20 bg-gradient-to-r from-gray-900 to-black py-20 px-8 rounded-lg">
+                <h2 class="text-5xl font-black uppercase tracking-wider text-center mb-16 text-brand-orange-light">
+                    RESEARCH & ACHIEVEMENT
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-brand-orange mb-2">150+</div>
+                        <div class="text-xl font-bold uppercase tracking-wider text-white">연구 논문</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-brand-orange mb-2">50+</div>
+                        <div class="text-xl font-bold uppercase tracking-wider text-white">산업체 프로젝트</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-brand-orange mb-2">25+</div>
+                        <div class="text-xl font-bold uppercase tracking-wider text-white">국제 수상</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black text-brand-orange mb-2">1000+</div>
+                        <div class="text-xl font-bold uppercase tracking-wider text-white">졸업생 네트워크</div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-  `;
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-gradient-to-r from-brand-orange to-brand-orange-light p-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-4 tracking-wider">MEET OUR EXPERTS</h2>
+            <p class="text-white text-xl mb-6">전문가들과 직접 만나보세요</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/contact" class="bg-white text-brand-orange px-8 py-4 font-bold uppercase tracking-wider hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+                    교수 상담 예약
+                </a>
+                <a href="/about" class="border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-brand-orange transform hover:scale-105 transition-all duration-300">
+                    학과 소개
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+`;
   
   return c.html(getLayout('교수진', content, 'faculty'));
 });
@@ -1044,6 +1078,137 @@ app.get('/curriculum', (c) => {
                     체계적인 4년 과정을 통해 이론과 실습을 균형있게 배우며, 창의적인 미디어 전문가로 성장합니다
                 </p>
             </div>
+
+            <!-- Year Grid -->
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Year 1 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-8">
+                    <h3 class="text-3xl font-bold text-brand-orange-light mb-6 uppercase tracking-wider">1학년 - 기초과정</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">방송영상학개론</h4>
+                            <p class="text-gray-300 text-sm">미디어 산업의 기본 이해</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">디지털미디어의이해</h4>
+                            <p class="text-gray-300 text-sm">디지털 기술 기초 학습</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">영상기초실습</h4>
+                            <p class="text-gray-300 text-sm">카메라 및 편집 기초 실습</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 2 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-8">
+                    <h3 class="text-3xl font-bold text-brand-orange-light mb-6 uppercase tracking-wider">2학년 - 심화과정</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">영상제작실습</h4>
+                            <p class="text-gray-300 text-sm">프로젝트 기반 영상 제작</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">방송기술론</h4>
+                            <p class="text-gray-300 text-sm">방송 시스템 기술 이해</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">편집디자인</h4>
+                            <p class="text-gray-300 text-sm">고급 편집 기법 학습</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 3 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-8">
+                    <h3 class="text-3xl font-bold text-brand-orange-light mb-6 uppercase tracking-wider">3학년 - 전문과정</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">콘텐츠기획론</h4>
+                            <p class="text-gray-300 text-sm">창의적 콘텐츠 기획 능력</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">다큐멘터리제작</h4>
+                            <p class="text-gray-300 text-sm">다큐멘터리 제작 실무</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">VR/AR콘텐츠제작</h4>
+                            <p class="text-gray-300 text-sm">신기술 활용 콘텐츠 제작</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Year 4 -->
+                <div class="bg-gradient-to-br from-gray-900 to-black border-2 border-brand-orange rounded-lg p-8">
+                    <h3 class="text-3xl font-bold text-brand-orange-light mb-6 uppercase tracking-wider">4학년 - 실무과정</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">졸업작품제작</h4>
+                            <p class="text-gray-300 text-sm">개인 포트폴리오 완성</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">현장실습</h4>
+                            <p class="text-gray-300 text-sm">방송사/제작사 인턴십</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded">
+                            <h4 class="text-lg font-bold text-white mb-2">캡스톤디자인</h4>
+                            <p class="text-gray-300 text-sm">산업체 연계 프로젝트</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialization Areas -->
+            <div class="mt-20 text-center">
+                <h2 class="text-4xl font-black uppercase tracking-wider text-brand-orange-light mb-12">
+                    SPECIALIZATION TRACKS
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-brand-orange text-black p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">방송 트랙</h3>
+                        <ul class="space-y-2 text-left">
+                            <li>• 방송 PD</li>
+                            <li>• 아나운서</li>
+                            <li>• 방송 기술</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-orange text-black p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">영상 트랙</h3>
+                        <ul class="space-y-2 text-left">
+                            <li>• 영화감독</li>
+                            <li>• 영상편집</li>
+                            <li>• VFX/CGI</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-orange text-black p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-4">뉴미디어 트랙</h3>
+                        <ul class="space-y-2 text-left">
+                            <li>• 유튜브 크리에이터</li>
+                            <li>• VR/AR 콘텐츠</li>
+                            <li>• 모션 그래픽</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-gradient-to-r from-brand-orange to-brand-orange-light p-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-4 tracking-wider">START YOUR CREATIVE JOURNEY</h2>
+            <p class="text-white text-xl mb-6">창의적인 교육과정으로 미래를 만들어가세요</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/contact" class="bg-white text-brand-orange px-8 py-4 font-bold uppercase tracking-wider hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+                    입학 상담
+                </a>
+                <a href="/works" class="border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-brand-orange transform hover:scale-105 transition-all duration-300">
+                    학생 작품 보기
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
             
             <div class="max-w-4xl mx-auto">
                 <!-- 1학년 -->
@@ -1372,6 +1537,126 @@ app.get('/contact', (c) => {
                     <h2 class="text-4xl font-black uppercase tracking-wider text-brand-orange-light mb-8">
                         GET IN TOUCH
                     </h2>
+                    
+                    <!-- Contact Cards -->
+                    <div class="space-y-8">
+                        <div class="bg-gradient-to-r from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6">
+                            <h3 class="text-2xl font-bold text-brand-orange-light mb-4 uppercase tracking-wider">
+                                <i class="fas fa-map-marker-alt mr-3"></i>Location
+                            </h3>
+                            <p class="text-lg text-white leading-relaxed">
+                                제주특별자치도 제주시 한라대학로 38<br>
+                                제주한라대학교 방송영상학과
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6">
+                            <h3 class="text-2xl font-bold text-brand-orange-light mb-4 uppercase tracking-wider">
+                                <i class="fas fa-phone mr-3"></i>Phone
+                            </h3>
+                            <p class="text-lg text-white">
+                                +82 1600 2995<br>
+                                학과 사무실: 064-741-1234
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6">
+                            <h3 class="text-2xl font-bold text-brand-orange-light mb-4 uppercase tracking-wider">
+                                <i class="fas fa-envelope mr-3"></i>Email
+                            </h3>
+                            <p class="text-lg text-white">
+                                media@chu.ac.kr<br>
+                                입학 문의: admissions@chu.ac.kr
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-r from-gray-900 to-black border-2 border-brand-orange rounded-lg p-6">
+                            <h3 class="text-2xl font-bold text-brand-orange-light mb-4 uppercase tracking-wider">
+                                <i class="fas fa-clock mr-3"></i>Office Hours
+                            </h3>
+                            <p class="text-lg text-white">
+                                월-금: 09:00 - 18:00<br>
+                                토: 09:00 - 12:00<br>
+                                일요일 및 공휴일 휴무
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Inquiry Form -->
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-black uppercase tracking-wider text-brand-orange-light mb-8">
+                        Send Message
+                    </h2>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <input type="text" placeholder="Your Name" 
+                                   class="w-full px-6 py-4 bg-gray-900 border-2 border-gray-700 rounded-lg text-white text-lg focus:border-brand-orange focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <input type="email" placeholder="Your Email" 
+                                   class="w-full px-6 py-4 bg-gray-900 border-2 border-gray-700 rounded-lg text-white text-lg focus:border-brand-orange focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <input type="text" placeholder="Subject" 
+                                   class="w-full px-6 py-4 bg-gray-900 border-2 border-gray-700 rounded-lg text-white text-lg focus:border-brand-orange focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <textarea placeholder="Your Message" rows="6"
+                                      class="w-full px-6 py-4 bg-gray-900 border-2 border-gray-700 rounded-lg text-white text-lg focus:border-brand-orange focus:outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-brand-orange to-brand-orange-light text-white py-4 px-8 font-bold uppercase tracking-wider hover:from-brand-orange-light hover:to-brand-orange transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Partnership Section -->
+            <div class="mt-20 text-center">
+                <h2 class="text-5xl font-black uppercase tracking-wider text-brand-orange-light mb-12">
+                    Industry Partners
+                </h2>
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-black mb-2">KBS</h3>
+                        <p class="text-gray-600">한국방송공사</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-black mb-2">SBS</h3>
+                        <p class="text-gray-600">에스비에스</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-black mb-2">MBC</h3>
+                        <p class="text-gray-600">문화방송</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg">
+                        <h3 class="text-xl font-bold text-black mb-2">CJ ENM</h3>
+                        <p class="text-gray-600">콘텐츠 그룹</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-gradient-to-r from-brand-orange to-brand-orange-light p-8 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold text-white mb-4 tracking-wider">LET'S COLLABORATE</h2>
+            <p class="text-white text-xl mb-6">함께 만들어가는 미래의 미디어 교육</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/about" class="bg-white text-brand-orange px-8 py-4 font-bold uppercase tracking-wider hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
+                    학과 소개
+                </a>
+                <a href="/curriculum" class="border-2 border-white text-white px-8 py-4 font-bold uppercase tracking-wider hover:bg-white hover:text-brand-orange transform hover:scale-105 transition-all duration-300">
+                    교육과정 보기
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
             
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Contact Information -->
