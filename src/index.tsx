@@ -486,119 +486,231 @@ app.get('/', (c) => {
 // Works page
 app.get('/works', (c) => {
   const content = `
-    <section class="py-20 bg-black">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h1 class="text-5xl md:text-6xl font-black mb-6">
+    <!-- Hero Section -->
+    <section class="section-bg-orange py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
+                    <span class="text-white">DYNAMIC</span><br>
                     <span class="hero-text">STUDENT WORKS</span>
                 </h1>
-                <p class="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-                    우리 학과 학생들의 <span class="text-brand-orange font-semibold">창의적이고 혁신적인</span> 영상 작품들을 만나보세요
+                <p class="text-xl md:text-2xl text-white opacity-90 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    창의적 비전과 혁신적 기술이 만나는 곳<br>
+                    <span class="text-yellow-300 font-bold">미래 미디어를 만들어가는 우리의 이야기</span>
                 </p>
             </div>
+        </div>
+        <!-- Decorative elements -->
+        <div class="absolute top-20 left-20 w-24 h-24 border-4 border-white opacity-20 rotate-45 animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-20 h-20 border-4 border-yellow-300 opacity-30 rotate-12 animate-bounce"></div>
+        <div class="absolute top-1/2 left-10 w-12 h-12 bg-white opacity-20 rounded-full animate-ping"></div>
+        <div class="absolute bottom-32 left-1/3 w-8 h-8 bg-yellow-300 opacity-40 rounded-full"></div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-black mb-4 text-white">
+                    EXPLORE BY <span class="hero-text">CATEGORY</span>
+                </h2>
+                <p class="text-gray-400 text-lg">다양한 장르의 창의적 작품들을 만나보세요</p>
+            </div>
             
-            <div class="flex flex-wrap justify-center gap-4 mb-16" id="categories">
-                <button class="category-btn btn-orange px-6 py-3 rounded-full text-white font-bold uppercase tracking-wide" data-category="all">
-                    ALL WORKS
+            <div class="flex flex-wrap justify-center gap-4 mb-8" id="categories">
+                <button class="category-btn btn-orange px-8 py-4 rounded-xl text-white font-black uppercase tracking-wider text-lg" data-category="all">
+                    <i class="fas fa-globe mr-3"></i>ALL WORKS
                 </button>
-                <button class="category-btn card-orange px-6 py-3 rounded-full text-gray-300 font-bold uppercase tracking-wide hover:bg-brand-orange hover:text-white transition" data-category="단편영화">
-                    FILMS
+                <button class="category-btn card-orange px-8 py-4 rounded-xl text-gray-300 font-black uppercase tracking-wider text-lg hover:bg-brand-orange hover:text-white transition duration-300" data-category="단편영화">
+                    <i class="fas fa-film mr-3"></i>SHORT FILMS
                 </button>
-                <button class="category-btn card-orange px-6 py-3 rounded-full text-gray-300 font-bold uppercase tracking-wide hover:bg-brand-orange hover:text-white transition" data-category="다큐멘터리">
-                    DOCUMENTARIES
+                <button class="category-btn card-orange px-8 py-4 rounded-xl text-gray-300 font-black uppercase tracking-wider text-lg hover:bg-brand-orange hover:text-white transition duration-300" data-category="다큐멘터리">
+                    <i class="fas fa-video mr-3"></i>DOCUMENTARIES
                 </button>
-                <button class="category-btn card-orange px-6 py-3 rounded-full text-gray-300 font-bold uppercase tracking-wide hover:bg-brand-orange hover:text-white transition" data-category="뮤직비디오">
-                    MUSIC VIDEOS
+                <button class="category-btn card-orange px-8 py-4 rounded-xl text-gray-300 font-black uppercase tracking-wider text-lg hover:bg-brand-orange hover:text-white transition duration-300" data-category="뮤직비디오">
+                    <i class="fas fa-music mr-3"></i>MUSIC VIDEOS
                 </button>
-                <button class="category-btn card-orange px-6 py-3 rounded-full text-gray-300 font-bold uppercase tracking-wide hover:bg-brand-orange hover:text-white transition" data-category="광고영상">
-                    COMMERCIALS
+                <button class="category-btn card-orange px-8 py-4 rounded-xl text-gray-300 font-black uppercase tracking-wider text-lg hover:bg-brand-orange hover:text-white transition duration-300" data-category="광고영상">
+                    <i class="fas fa-bullhorn mr-3"></i>COMMERCIALS
                 </button>
-                <button class="category-btn card-orange px-6 py-3 rounded-full text-gray-300 font-bold uppercase tracking-wide hover:bg-brand-orange hover:text-white transition" data-category="실험영상">
-                    EXPERIMENTAL
+                <button class="category-btn card-orange px-8 py-4 rounded-xl text-gray-300 font-black uppercase tracking-wider text-lg hover:bg-brand-orange hover:text-white transition duration-300" data-category="실험영상">
+                    <i class="fas fa-flask mr-3"></i>EXPERIMENTAL
                 </button>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
+    <!-- Works Grid -->
+    <section class="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
         <div class="container mx-auto px-4">
             <div id="works-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Works will be loaded here via JavaScript -->
+            </div>
+            
+            <!-- Load More Section -->
+            <div class="text-center mt-16">
+                <div class="bg-gradient-to-r from-brand-orange to-yellow-500 p-1 rounded-xl inline-block">
+                    <div class="bg-black px-8 py-4 rounded-lg">
+                        <h3 class="text-white font-bold text-lg mb-2">MORE CREATIVE WORKS</h3>
+                        <p class="text-gray-400 mb-4">더 많은 작품들이 공개 예정입니다</p>
+                        <button class="btn-orange px-6 py-2 rounded-lg font-semibold uppercase tracking-wide">
+                            COMING SOON
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-brand-orange via-yellow-500 to-brand-orange">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+                CREATE YOUR OWN
+            </h2>
+            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+                당신도 이런 명작들을 만들 수 있습니다. 지금 시작하세요!
+            </p>
+            <div class="flex justify-center space-x-6 flex-wrap gap-4">
+                <a href="/about" class="bg-black text-white px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wide hover:bg-gray-900 transition duration-300">
+                    <i class="fas fa-info-circle mr-3"></i>
+                    LEARN MORE
+                </a>
+                <a href="/contact" class="border-2 border-black text-black px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wide hover:bg-black hover:text-white transition duration-300">
+                    <i class="fas fa-envelope mr-3"></i>
+                    CONTACT US
+                </a>
             </div>
         </div>
     </section>
   `;
   
-  return c.html(getLayout('작품', content, 'works'));
+  return c.html(getLayout('DYNAMIC WORKS', content, 'works'));
 });
 
 // About page
 app.get('/about', (c) => {
   const content = `
-    <section class="py-16 bg-white">
+    <!-- Hero Section -->
+    <section class="section-bg-orange py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight">
+                    <span class="hero-text">EMPOWERING</span><br>
+                    <span class="text-white">FUTURE CREATORS</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white opacity-90 mb-12 leading-relaxed max-w-3xl mx-auto">
+                    미래 미디어를 선도하는 창의적 인재로<br>
+                    <span class="text-yellow-300 font-bold">당신의 꿈을 현실로 만들어보세요</span>
+                </p>
+            </div>
+        </div>
+        <!-- Power symbols -->
+        <div class="absolute top-16 left-16 w-20 h-20 border-4 border-yellow-300 opacity-30 rotate-45 animate-pulse"></div>
+        <div class="absolute bottom-16 right-16 w-24 h-24 border-4 border-white opacity-20 rotate-12 animate-bounce"></div>
+        <div class="absolute top-1/3 right-20 w-16 h-16 bg-yellow-300 opacity-20 rounded-full animate-ping"></div>
+        <div class="absolute bottom-1/3 left-20 w-12 h-12 bg-white opacity-30 clip-path-triangle"></div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
-                <i class="fas fa-graduation-cap mr-3"></i>
-                학과 소개
-            </h1>
-            
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl font-semibold mb-6 text-purple-600">미래 미디어를 선도하는 인재 양성</h2>
-                    <p class="text-gray-600 mb-4 text-lg leading-relaxed">
-                        제주한라대학교 방송영상학과는 급변하는 미디어 환경에 대응하는 창의적이고 
-                        전문적인 영상 콘텐츠 제작자를 양성합니다.
-                    </p>
-                    <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-                        최신 장비와 시설을 갖춘 실습실에서 이론과 실무를 겸비한 교육을 제공하며, 
-                        학생들의 창의적인 아이디어가 현실이 되는 곳입니다.
-                    </p>
+                    <h2 class="text-4xl md:text-5xl font-black mb-8">
+                        <span class="hero-text">OUR VISION</span>
+                    </h2>
+                    <div class="space-y-6">
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            제주한라대학교 방송영상학과는 <span class="text-brand-orange font-bold">급변하는 미디어 환경</span>에 대응하는 창의적이고 전문적인 영상 콘텐츠 제작자를 양성합니다.
+                        </p>
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            최신 장비와 시설을 갖춘 실습실에서 <span class="text-yellow-300 font-bold">이론과 실무를 겸비한 교육</span>을 제공하며, 학생들의 창의적인 아이디어가 현실이 되는 곳입니다.
+                        </p>
+                    </div>
                     
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">주요 특징</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 mr-3 mt-1"></i>
-                            <span class="text-gray-600">최첨단 스튜디오 및 편집실 완비</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 mr-3 mt-1"></i>
-                            <span class="text-gray-600">산학협력을 통한 실무 경험 제공</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 mr-3 mt-1"></i>
-                            <span class="text-gray-600">다양한 공모전 및 영화제 참여 지원</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 mr-3 mt-1"></i>
-                            <span class="text-gray-600">개인별 맞춤형 포트폴리오 관리</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check-circle text-purple-600 mr-3 mt-1"></i>
-                            <span class="text-gray-600">미디어 업계 현직 전문가 특강</span>
-                        </li>
-                    </ul>
+                    <div class="mt-12">
+                        <h3 class="text-2xl font-black mb-6 text-brand-orange uppercase tracking-wider">CORE STRENGTHS</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-rocket text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1">최첨단 스튜디오 및 편집실 완비</h4>
+                                    <p class="text-gray-400">전문가 수준의 장비와 환경에서 실무 경험 제공</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-handshake text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1">산학협력을 통한 실무 경험 제공</h4>
+                                    <p class="text-gray-400">업계 최전선과 직접 연결되는 프로젝트 경험</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-trophy text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1">다양한 공모전 및 영화제 참여 지원</h4>
+                                    <p class="text-gray-400">국내외 대회 지원으로 전문성 인정 및 경력 쌓기</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start group">
+                                <div class="w-12 h-12 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
+                                    <i class="fas fa-user-graduate text-white text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg mb-1">개인별 맞춤형 포트폴리오 관리</h4>
+                                    <p class="text-gray-400">전문 커리어 컨설팅과 취업 로드맵 제공</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-2xl">
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="bg-white p-6 rounded-xl">
-                            <i class="fas fa-users text-3xl text-purple-600 mb-2"></i>
-                            <h4 class="font-semibold text-2xl">200+</h4>
-                            <p class="text-sm text-gray-600">재학생</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl">
-                            <i class="fas fa-trophy text-3xl text-purple-600 mb-2"></i>
-                            <h4 class="font-semibold text-2xl">50+</h4>
-                            <p class="text-sm text-gray-600">수상 작품</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl">
-                            <i class="fas fa-video text-3xl text-purple-600 mb-2"></i>
-                            <h4 class="font-semibold text-2xl">100+</h4>
-                            <p class="text-sm text-gray-600">연간 제작</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl">
-                            <i class="fas fa-briefcase text-3xl text-purple-600 mb-2"></i>
-                            <h4 class="font-semibold text-2xl">85%</h4>
-                            <p class="text-sm text-gray-600">취업률</p>
+                
+                <!-- Stats Section -->
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-brand-orange via-yellow-500 to-brand-orange p-1 rounded-2xl">
+                        <div class="bg-black p-8 rounded-xl">
+                            <h3 class="text-3xl font-black text-center text-white mb-8">
+                                SUCCESS <span class="hero-text">METRICS</span>
+                            </h3>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="text-center group hover:scale-105 transition-transform duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-users text-3xl text-white"></i>
+                                    </div>
+                                    <h4 class="text-4xl font-black text-white mb-2">200+</h4>
+                                    <p class="text-gray-400 uppercase tracking-wider font-semibold">재학생</p>
+                                </div>
+                                <div class="text-center group hover:scale-105 transition-transform duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-trophy text-3xl text-white"></i>
+                                    </div>
+                                    <h4 class="text-4xl font-black text-white mb-2">50+</h4>
+                                    <p class="text-gray-400 uppercase tracking-wider font-semibold">수상 작품</p>
+                                </div>
+                                <div class="text-center group hover:scale-105 transition-transform duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-video text-3xl text-white"></i>
+                                    </div>
+                                    <h4 class="text-4xl font-black text-white mb-2">100+</h4>
+                                    <p class="text-gray-400 uppercase tracking-wider font-semibold">연간 제작</p>
+                                </div>
+                                <div class="text-center group hover:scale-105 transition-transform duration-300">
+                                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-briefcase text-3xl text-white"></i>
+                                    </div>
+                                    <h4 class="text-4xl font-black text-white mb-2">85%</h4>
+                                    <p class="text-gray-400 uppercase tracking-wider font-semibold">취업률</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -606,70 +718,142 @@ app.get('/about', (c) => {
         </div>
     </section>
 
-    <section class="py-16 bg-gray-50">
+    <!-- Education Goals -->
+    <section class="py-20 bg-gradient-to-b from-black to-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">교육 목표</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-6">
+                    <span class="hero-text">EDUCATION GOALS</span>
+                </h2>
+                <p class="text-gray-400 text-xl max-w-3xl mx-auto">미래를 이끌어갈 미디어 전문가 양성을 위한 3대 고도</p>
+            </div>
+            
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <i class="fas fa-lightbulb text-4xl text-purple-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">창의성 개발</h3>
-                    <p class="text-gray-600">독창적인 아이디어와 창의적 사고를 바탕으로 한 콘텐츠 제작 능력 함양</p>
+                <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300 group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+                        <i class="fas fa-lightbulb text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-brand-orange uppercase tracking-wider">창의성 개발</h3>
+                    <p class="text-gray-300 leading-relaxed">독창적인 아이디어와 창의적 사고를 바탕으로 한 <span class="text-white font-semibold">혁신적 콘텐츠 제작 능력</span> 함양</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <i class="fas fa-cogs text-4xl text-blue-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">기술적 전문성</h3>
-                    <p class="text-gray-600">최신 방송영상 제작 기술과 장비 활용 능력을 갖춘 전문가 양성</p>
+                <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300 group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+                        <i class="fas fa-cogs text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-brand-orange uppercase tracking-wider">기술적 전문성</h3>
+                    <p class="text-gray-300 leading-relaxed">최신 방송영상 제작 기술과 장비 활용 능력을 갖춘 <span class="text-white font-semibold">전문가 양성</span></p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
-                    <i class="fas fa-handshake text-4xl text-green-600 mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-4">산업 연계</h3>
-                    <p class="text-gray-600">현장 실무 경험을 통한 미디어 산업계 즉시 투입 가능한 인재 육성</p>
+                <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-transform duration-300 group">
+                    <div class="w-20 h-20 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-pulse">
+                        <i class="fas fa-handshake text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-black mb-4 text-brand-orange uppercase tracking-wider">산업 연계</h3>
+                    <p class="text-gray-300 leading-relaxed">현장 실무 경험을 통한 미디어 산업계 <span class="text-white font-semibold">즉시 투입 가능한 인재</span> 육성</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-white">
+    <!-- Facilities -->
+    <section class="py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">주요 시설</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
-                    <i class="fas fa-tv text-3xl text-purple-600 mb-3"></i>
-                    <h3 class="font-semibold mb-2">HD 스튜디오</h3>
-                    <p class="text-sm text-gray-600">전문 방송용 카메라와 조명 시설</p>
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black mb-6">
+                    <span class="hero-text">STATE-OF-THE-ART</span> <span class="text-white">FACILITIES</span>
+                </h2>
+                <p class="text-gray-400 text-xl">전문가 수준의 시설과 장비로 창의력을 현실로</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group">
+                    <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                            <i class="fas fa-tv text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-wide">HD STUDIO</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">전문 방송용 카메라와 조명 시설로 고품질 콘텐츠 제작</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
-                    <i class="fas fa-cut text-3xl text-blue-600 mb-3"></i>
-                    <h3 class="font-semibold mb-2">편집실</h3>
-                    <p class="text-sm text-gray-600">Avid, Premiere Pro 등 전문 편집 소프트웨어</p>
+                <div class="group">
+                    <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                            <i class="fas fa-cut text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-wide">EDIT SUITE</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">Avid, Premiere Pro 등 전문 편집 소프트웨어와 고사양 장비</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
-                    <i class="fas fa-microphone text-3xl text-green-600 mb-3"></i>
-                    <h3 class="font-semibold mb-2">녹음실</h3>
-                    <p class="text-sm text-gray-600">고품질 오디오 레코딩 및 후시녹음 시설</p>
+                <div class="group">
+                    <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                            <i class="fas fa-microphone text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-wide">SOUND STUDIO</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">고품질 오디오 레코딩 및 후시녹음 전용 시설</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-xl">
-                    <i class="fas fa-desktop text-3xl text-yellow-600 mb-3"></i>
-                    <h3 class="font-semibold mb-2">컴퓨터실</h3>
-                    <p class="text-sm text-gray-600">고사양 워크스테이션과 그래픽 소프트웨어</p>
+                <div class="group">
+                    <div class="card-orange p-8 rounded-xl text-center hover:scale-105 transition-all duration-300">
+                        <div class="w-16 h-16 bg-gradient-to-r from-brand-orange to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:animate-bounce">
+                            <i class="fas fa-desktop text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-white uppercase tracking-wide">COMPUTER LAB</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">고사양 워크스테이션과 그래픽 소프트웨어 완비</p>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-brand-orange via-yellow-500 to-brand-orange">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+                YOUR CREATIVE JOURNEY STARTS HERE
+            </h2>
+            <p class="text-xl text-white opacity-90 mb-8 max-w-2xl mx-auto">
+                미래를 만들어갈 창의적 인재가 되는 여정, 지금 시작하세요!
+            </p>
+            <div class="flex justify-center space-x-6 flex-wrap gap-4">
+                <a href="/works" class="bg-black text-white px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wide hover:bg-gray-900 transition duration-300">
+                    <i class="fas fa-play mr-3"></i>
+                    VIEW STUDENT WORKS
+                </a>
+                <a href="/contact" class="border-2 border-black text-black px-8 py-4 rounded-xl font-bold text-lg uppercase tracking-wide hover:bg-black hover:text-white transition duration-300">
+                    <i class="fas fa-envelope mr-3"></i>
+                    GET IN TOUCH
+                </a>
             </div>
         </div>
     </section>
   `;
   
-  return c.html(getLayout('학과소개', content, 'about'));
+  return c.html(getLayout('EMPOWERING EDUCATION', content, 'about'));
 });
 
 // Faculty page
 app.get('/faculty', (c) => {
   const content = `
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
-                <i class="fas fa-chalkboard-teacher mr-3"></i>
-                교수진
+<div class="min-h-screen bg-black text-white">
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-brand-orange via-brand-orange-light to-brand-orange-dark py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-6xl md:text-8xl font-black uppercase tracking-wider mb-6 transform hover:scale-105 transition-transform duration-500">
+                DYNAMIC
             </h1>
+            <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-4">
+                EXPERT FACULTY
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                역동적인 미디어 산업을 이끄는 전문가들과 함께<br>
+                미래의 크리에이터를 양성합니다
+            </p>
+        </div>
+    </div>
+
+    <!-- Faculty Grid -->
+    <div class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 교수진 1 -->
@@ -829,15 +1013,37 @@ app.get('/faculty', (c) => {
   return c.html(getLayout('교수진', content, 'faculty'));
 });
 
-// Curriculum page
+// Curriculum page - CREATIVE 컨셉
 app.get('/curriculum', (c) => {
   const content = `
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
-                <i class="fas fa-book mr-3"></i>
-                교육과정
+<div class="min-h-screen bg-black text-white">
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-brand-orange via-brand-orange-light to-brand-orange-dark py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-6xl md:text-8xl font-black uppercase tracking-wider mb-6 transform hover:scale-105 transition-transform duration-500">
+                CREATIVE
             </h1>
+            <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-4">
+                INNOVATIVE CURRICULUM
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                창의적 사고를 키우는 혁신적인 교육과정으로<br>
+                미래 미디어 산업의 리더를 양성합니다
+            </p>
+        </div>
+    </div>
+
+    <!-- Curriculum Overview -->
+    <div class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-black uppercase tracking-wider text-brand-orange-light mb-8">
+                    4-YEAR ROADMAP
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    체계적인 4년 과정을 통해 이론과 실습을 균형있게 배우며, 창의적인 미디어 전문가로 성장합니다
+                </p>
+            </div>
             
             <div class="max-w-4xl mx-auto">
                 <!-- 1학년 -->
@@ -1137,15 +1343,35 @@ app.get('/curriculum', (c) => {
   return c.html(getLayout('교육과정', content, 'curriculum'));
 });
 
-// Contact page
+// Contact page - COLLABORATIVE 컨셉
 app.get('/contact', (c) => {
   const content = `
-    <section class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h1 class="text-4xl font-bold text-center text-gray-800 mb-12">
-                <i class="fas fa-envelope mr-3"></i>
-                연락처
+<div class="min-h-screen bg-black text-white">
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-br from-brand-orange via-brand-orange-light to-brand-orange-dark py-20">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-6xl md:text-8xl font-black uppercase tracking-wider mb-6 transform hover:scale-105 transition-transform duration-500">
+                COLLABORATIVE
             </h1>
+            <h2 class="text-3xl md:text-4xl font-bold uppercase tracking-wider mb-4">
+                CONNECT WITH US
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
+                함께 만들어가는 미래의 미디어 교육<br>
+                당신의 꿈을 현실로 만들어드립니다
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Grid -->
+    <div class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-black uppercase tracking-wider text-brand-orange-light mb-8">
+                        GET IN TOUCH
+                    </h2>
             
             <div class="grid lg:grid-cols-2 gap-12">
                 <!-- Contact Information -->
