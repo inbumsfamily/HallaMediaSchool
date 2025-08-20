@@ -18,9 +18,9 @@ function getLayout(title: string, content: string, activePage: string = 'home') 
             theme: {
                 extend: {
                     colors: {
-                        'brand-blue': '#4C88FF',
-                        'brand-blue-light': '#6A9DFF', 
-                        'brand-blue-dark': '#3366CC',
+                        'brand-blue': '#1E40AF',
+                        'brand-blue-light': '#3B82F6', 
+                        'brand-blue-dark': '#1E3A8A',
                         'brand-gray': '#202020',
                         'brand-gray-light': '#B0B0B0'
                     },
@@ -39,30 +39,30 @@ function getLayout(title: string, content: string, activePage: string = 'home') 
         }
         .work-card {
             transition: all 0.4s ease;
-            border: 1px solid rgba(76, 136, 255, 0.2);
+            border: 1px solid rgba(30, 64, 175, 0.2);
         }
         .work-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(76, 136, 255, 0.3);
-            border-color: #4C88FF;
+            box-shadow: 0 20px 40px rgba(30, 64, 175, 0.3);
+            border-color: #1E40AF;
         }
         .gradient-bg {
-            background: linear-gradient(135deg, #4C88FF 0%, #6A9DFF 50%, #87CEEB 100%);
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 50%, #60A5FA 100%);
         }
         .gradient-bg-dark {
             background: linear-gradient(135deg, #202020 0%, #404040 50%, #606060 100%);
         }
         .category-badge {
-            background: linear-gradient(135deg, #4C88FF, #6A9DFF);
+            background: linear-gradient(135deg, #1E40AF, #3B82F6);
             color: white;
         }
         .nav-active {
-            color: #4C88FF !important;
-            border-bottom: 3px solid #4C88FF;
+            color: #1E40AF !important;
+            border-bottom: 3px solid #1E40AF;
             font-weight: 600;
         }
         .hero-text {
-            background: linear-gradient(135deg, #4C88FF, #6A9DFF, #87CEEB);
+            background: linear-gradient(135deg, #1E40AF, #3B82F6, #60A5FA);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -71,22 +71,22 @@ function getLayout(title: string, content: string, activePage: string = 'home') 
             letter-spacing: 0.1em;
         }
         .section-bg-blue {
-            background: linear-gradient(135deg, #4C88FF 0%, #6A9DFF 100%);
+            background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
         }
         .card-blue {
-            background: linear-gradient(135deg, rgba(76, 136, 255, 0.1), rgba(106, 157, 255, 0.1));
-            border: 1px solid rgba(76, 136, 255, 0.3);
+            background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid rgba(30, 64, 175, 0.3);
         }
         .btn-blue {
-            background: linear-gradient(135deg, #4C88FF, #6A9DFF);
+            background: linear-gradient(135deg, #1E40AF, #3B82F6);
             transition: all 0.3s ease;
         }
         .btn-blue:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(76, 136, 255, 0.4);
+            box-shadow: 0 10px 20px rgba(30, 64, 175, 0.4);
         }
         .text-brand {
-            color: #4C88FF;
+            color: #1E40AF;
         }
     </style>
 </head>
