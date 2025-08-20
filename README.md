@@ -10,8 +10,8 @@
   - 학과 소개 및 연락처 정보
 
 ## URLs
-- **개발 서버**: https://3000-i1bkp21a962j1f4znsge2-6532622b.e2b.dev
-- **Production**: https://hallamediaschool.pages.dev (배포 예정)
+- **개발 서버**: https://3000-i5nnt5pvf85is9tdmair8-6532622b.e2b.dev
+- **Production**: https://hallamediaschool.pages.dev ✅ 배포 완료
 - **GitHub**: https://github.com/inbumsfamily/HallaMediaSchool
 
 ## 현재 완성된 기능
@@ -98,7 +98,8 @@ npm run deploy
 
 ## 배포 상태
 - **플랫폼**: Cloudflare Pages
-- **상태**: ✅ 개발 중
+- **상태**: ✅ 배포 완료
+- **배포 URL**: https://hallamediaschool.pages.dev
 - **마지막 업데이트**: 2025-01-20
 
 ## 연락처
