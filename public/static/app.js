@@ -1,10 +1,12 @@
 // Load works from API
-async function loadWorks(category = 'all') {
+async function loadWorks(category = 'all', containerId = 'works-grid') {
     try {
         const response = await fetch('/api/works');
         const works = await response.json();
         
-        const grid = document.getElementById('works-grid');
+        const grid = document.getElementById(containerId);
+        if (!grid) return;
+        
         grid.innerHTML = '';
         
         const filteredWorks = category === 'all' 
@@ -13,30 +15,30 @@ async function loadWorks(category = 'all') {
         
         filteredWorks.forEach(work => {
             const card = document.createElement('div');
-            card.className = 'work-card bg-white rounded-xl shadow-lg overflow-hidden';
+            card.className = 'work-card card-orange rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300';
             card.innerHTML = `
                 <div class="relative">
                     <img src="${work.thumbnail}" alt="${work.title}" class="w-full h-48 object-cover">
-                    <span class="absolute top-4 right-4 category-badge px-3 py-1 rounded-full text-sm font-medium">
+                    <span class="absolute top-4 right-4 category-badge px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
                         ${work.category}
                     </span>
                 </div>
                 <div class="p-6">
-                    <h3 class="text-xl font-semibold mb-2">${work.title}</h3>
-                    <p class="text-gray-600 mb-3">${work.description}</p>
-                    <div class="flex justify-between items-center">
-                        <div class="text-sm text-gray-500">
-                            <i class="fas fa-user mr-1"></i>
+                    <h3 class="text-xl font-bold mb-2 text-white">${work.title}</h3>
+                    <p class="text-gray-300 mb-4 leading-relaxed">${work.description}</p>
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="text-sm text-gray-400">
+                            <i class="fas fa-user mr-2 text-brand-orange"></i>
                             ${work.author}
                         </div>
-                        <div class="text-sm text-gray-500">
-                            <i class="fas fa-calendar mr-1"></i>
+                        <div class="text-sm text-gray-400">
+                            <i class="fas fa-calendar mr-2 text-brand-orange"></i>
                             ${work.year}
                         </div>
                     </div>
-                    <button class="mt-4 w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition">
+                    <button class="w-full btn-orange text-white py-3 rounded-lg font-bold uppercase tracking-wide text-sm" onclick="viewWork(${work.id})">
                         <i class="fas fa-play mr-2"></i>
-                        작품 보기
+                        WATCH NOW
                     </button>
                 </div>
             `;
@@ -47,32 +49,68 @@ async function loadWorks(category = 'all') {
     }
 }
 
+// View individual work (placeholder)
+function viewWork(workId) {
+    // TODO: Implement work detail view
+    alert(`작품 ID: ${workId} 상세 보기 기능은 곧 추가될 예정입니다.`);
+}
+
 // Category filter functionality
-document.addEventListener('DOMContentLoaded', () => {
-    // Load all works initially
-    loadWorks();
-    
-    // Add click handlers to category buttons
+function setupCategoryFilters() {
     const categoryButtons = document.querySelectorAll('.category-btn');
     categoryButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             // Remove active class from all buttons
             categoryButtons.forEach(btn => {
-                btn.classList.remove('bg-purple-600', 'text-white');
-                btn.classList.add('bg-white', 'text-gray-700');
+                btn.classList.remove('btn-orange', 'text-white');
+                btn.classList.add('card-orange', 'text-gray-300');
             });
             
             // Add active class to clicked button
-            e.target.classList.remove('bg-white', 'text-gray-700');
-            e.target.classList.add('bg-purple-600', 'text-white');
+            e.target.classList.remove('card-orange', 'text-gray-300');
+            e.target.classList.add('btn-orange', 'text-white');
             
             // Load filtered works
             const category = e.target.dataset.category;
             loadWorks(category);
         });
     });
+}
+
+// Contact form submission
+function setupContactForm() {
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('문의가 성공적으로 접수되었습니다. 빠른 시일 내에 답변드리겠습니다.');
+            contactForm.reset();
+        });
+    }
+}
+
+// Mobile menu toggle
+function setupMobileMenu() {
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
     
-    // Smooth scroll for navigation links
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle icon
+            const icon = mobileMenuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.className = 'fas fa-bars text-xl';
+            } else {
+                icon.className = 'fas fa-times text-xl';
+            }
+        });
+    }
+}
+
+// Smooth scroll for anchor links
+function setupSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -85,20 +123,31 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+}
+
+// Page-specific initialization
+function initPage() {
+    const currentPath = window.location.pathname;
     
-    // Hero button actions
-    const heroButtons = document.querySelectorAll('section.bg-white button');
-    if (heroButtons[0]) {
-        heroButtons[0].addEventListener('click', () => {
-            document.getElementById('works').scrollIntoView({ behavior: 'smooth' });
-        });
+    switch(currentPath) {
+        case '/':
+            // Home page
+            loadWorks('all', 'home-works-grid');
+            break;
+        case '/works':
+            // Works page
+            loadWorks();
+            setupCategoryFilters();
+            break;
+        case '/contact':
+            // Contact page
+            setupContactForm();
+            break;
+        default:
+            // Other pages
+            break;
     }
-    if (heroButtons[1]) {
-        heroButtons[1].addEventListener('click', () => {
-            document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-        });
-    }
-});
+}
 
 // Add animation on scroll
 const observerOptions = {
@@ -115,8 +164,8 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe sections for animation
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize scroll animations
+function initScrollAnimations() {
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
         section.style.opacity = '0';
@@ -124,4 +173,17 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(section);
     });
+}
+
+// Main initialization
+document.addEventListener('DOMContentLoaded', () => {
+    setupMobileMenu();
+    setupSmoothScroll();
+    initScrollAnimations();
+    initPage();
+});
+
+// Handle browser back/forward navigation
+window.addEventListener('popstate', () => {
+    initPage();
 });
